@@ -11,13 +11,10 @@ public class Animal {
         this.numberOfPaws = numberOfPaws;
         this.hasFur = hasFur;
     }
-    public void getDescription(){
-        if(hasFur){
-            System.out.println("This animal has mostly " + color + ". It has " + numberOfPaws + "paws and a fur.");
-        } else {
-            System.out.println("This animal has mostly " + color + ". It has " + numberOfPaws + "paws and no fur.");
-        }
-
+    public String getDescription() {
+        String pawWord = (numberOfPaws == 1) ? "paw" : "paws";
+        String furDescription = hasFur ? "a" : "no";
+        return String.format("This animal is mostly %s. It has %d %s and %s fur.", color, numberOfPaws, pawWord, furDescription);
     }
 
 }
